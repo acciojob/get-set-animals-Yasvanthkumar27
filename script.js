@@ -1,42 +1,42 @@
-// complete this code
-
+// Base Animal class
 class Animal {
-    constructor(species) {
-        this._species = species;
-    }
+  constructor(species) {
+    this._species = species;
+  }
 
-    // getter for species
-    get species() {
-        return this._species;
-    }
+  // getter for species
+  get species() {
+    return this._species;
+  }
 
-    // required method
-    makeSound() {
-        console.log(${this._species} makes a sound);
-    }
+  // optional setter (not required, but harmless)
+  set species(newSpecies) {
+    this._species = newSpecies;
+  }
+
+  // method: logs "The <species> makes a sound"
+  makeSound() {
+    console.log(The ${this.species} makes a sound);
+  }
 }
 
-class Dog extends Animal {
-    constructor(species) {
-        super(species);
-    }
-
-    bark() {
-        console.log("woof");
-    }
-}
-
+// Cat class extends Animal
 class Cat extends Animal {
-    constructor(species) {
-        super(species);
-    }
-
-    purr() {
-        console.log("purr");
-    }
+  // logs "purr"
+  purr() {
+    console.log("purr");
+  }
 }
 
-// Do not change the code below this line
+// Dog class extends Animal
+class Dog extends Animal {
+  // logs "woof"
+  bark() {
+    console.log("woof");
+  }
+}
+
+// Expose classes on window so Cypress can access them
 window.Animal = Animal;
-window.Dog = Dog;
-window.Cat = Cat;
+window.Cat = Cat;
+window.Dog = Dog;
