@@ -16,7 +16,7 @@ class Animal {
 
   // method: logs "The <species> makes a sound"
   makeSound() {
-    console.log(The ${this.species} makes a sound);
+    console.log("The " + this.species + " makes a sound";
   }
 }
 
